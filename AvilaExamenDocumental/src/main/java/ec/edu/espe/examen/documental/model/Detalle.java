@@ -19,5 +19,4 @@ public class Detalle {
     
     private String codProducto;
     private Integer cantidad;
-    private BigDecimal subtotal;
 }

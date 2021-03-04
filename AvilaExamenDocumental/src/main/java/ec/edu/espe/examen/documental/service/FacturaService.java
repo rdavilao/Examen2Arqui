@@ -29,7 +29,7 @@ public class FacturaService {
     
     public void create(Factura factura) throws InsertException {
         try {
-             HttpResponse<JsonNode> request = Unirest.get("http://localhost:8082/api/examen/findClientByCedula/{cedula}")
+             HttpResponse<JsonNode> request = Unirest.get("http://localhost:8082/api/examen/client/findClientByCedula/{cedula}")
                         .routeParam("cedula", factura.getCedula()).asJson();             
              factura.setCorreo(request.getBody().getObject().getString("correo"));
              factura.setDireccion(request.getBody().getObject().getString("direccion"));
