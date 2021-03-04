@@ -31,6 +31,7 @@ public class ClienteService {
     public void create(Cliente client) throws InsertException {
         try {
             if (validarCed(client.getCedula())) {
+                log.info("Creando cliente");
                 this.clientRepo.save(client);
             } else {
                 log.error("Cedula incorrecta");
@@ -43,6 +44,7 @@ public class ClienteService {
 
     public Cliente findByCedula(String cedula) throws DocumentNotFoundException {
         try {
+            log.info("Buscando cliente");
             Optional<Cliente> clientFind = this.clientRepo.findById(cedula);
             if (clientFind.isPresent()) {
                 return clientFind.get();

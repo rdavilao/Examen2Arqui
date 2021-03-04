@@ -35,7 +35,7 @@ public class FacturaService {
         try {
              HttpResponse<JsonNode> request = Unirest.get("http://localhost:8082/api/examen/client/findClientByCedula/{cedula}")
                         .routeParam("cedula", factura.getCedula()).asJson();
-             
+             log.info("Creando factura");
              factura.setCorreo(request.getBody().getObject().getString("correo"));
              factura.setDireccion(request.getBody().getObject().getString("direccion"));
              factura.setNombre(request.getBody().getObject().getString("nombre"));

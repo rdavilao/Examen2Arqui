@@ -26,6 +26,7 @@ public class ProductoService {
 
     public void create(Producto producto) throws InsertException {
         try {
+            log.info("Creando producto");
             Producto lastProduct = this.productoRepo.findTopByOrderByCodigoDesc();
             producto.setCodigo(String.valueOf(Integer.parseInt(lastProduct.getCodigo())));
             this.productoRepo.save(producto);
@@ -36,6 +37,7 @@ public class ProductoService {
 
     public Producto findByCod(String codigo) throws DocumentNotFoundException {
         try {
+            log.info("Buscando producto "+codigo);
             Optional<Producto> productFind = this.productoRepo.findById(codigo);
             if (!productFind.isEmpty()) {
                 log.info("Buscando producto con codigo: "+codigo);
@@ -51,6 +53,7 @@ public class ProductoService {
 
     public void update(Producto producto) throws UpdateException {
         try {
+            log.info("Actualizando  producto");
             Optional<Producto> productUpdate = this.productoRepo.findById(producto.getCodigo());            
             if(!productUpdate.isEmpty()){
                 productUpdate.get().setNombre((producto.getNombre() != null) ? producto.getNombre() : productUpdate.get().getNombre());
