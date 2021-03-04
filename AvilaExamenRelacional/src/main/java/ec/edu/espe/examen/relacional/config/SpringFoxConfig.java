@@ -25,7 +25,7 @@ public class SpringFoxConfig {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("ec.edu.espe.corebancario.transactions.api"))              
+          .apis(RequestHandlerSelectors.basePackage("ec.edu.espe.examen.relacional.api"))              
           .paths(PathSelectors.any())                          
           .build();                                           
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.examen.documental.config;
+package ec.edu.espe.relacional1.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +25,7 @@ public class SpringFoxConfig {
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  
           .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("ec.edu.espe.examen.documental.api"))              
+          .apis(RequestHandlerSelectors.basePackage("ec.edu.espe.examen.relacional1.api"))              
           .paths(PathSelectors.any())                          
           .build();                                           
     }
